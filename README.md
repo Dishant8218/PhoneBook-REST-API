@@ -34,3 +34,57 @@ Run the docker-file
 Test if the setup has been completed by going to the browser and typing "localhost:2000"
 
 `localhost:2000`
+
+#  Instructions to run all the methods on Postman
+
+
+1.  Open Postman and click on the "Import" button in the top-left corner of the screen.
+    
+2.  In the "Import" dialog box, select "Paste Raw Text" and paste the JSON code provided.
+    
+3.  Click on the "Import" button to import the collection into Postman.
+    
+4.  Once the collection is imported, select it from the left-hand menu to view its contents.
+    
+5.  To test the "Login" method, expand the "Login" request and enter the username and password in the request body using JSON format:
+
+`{  
+"username":  "myuser",  
+"password":  "mypassword"  
+}`
+
+6.  Click on the "Send" button to send the request to the server. After a successful login, a token will be generated.
+    
+7.  Copy the generated token and paste it in the "Authorization" tab for all the subsequent requests. Select the "Bearer Token" type from the dropdown and paste the copied token in the "Token" field.
+    
+8.  To test the "View List" method, expand the "View List" request and click on the "Send" button to send the request to the server.
+    
+9.  To test the "Add Contact" method, expand the "Add Contact" request, enter the contact details in the request body using JSON format:
+    
+`{  
+"name":  "enter name here",
+"phone_number":"enter phone number here"  
+}`
+
+10.  Click on the "Send" button to send the request to the server.
+    
+11.  To test the "Delete by name" method, expand the "Delete by name" request, enter the name of the contact to delete in the request body using JSON format:
+    
+`{  
+"name":  "enter name here"  
+}`
+
+12.  Click on the "Send" button to send the request to the server.
+    
+13.  To test the "Delete by Phone Number" method, expand the "Delete by Phone Number" request, enter the phone number of the contact to delete in the request body using JSON format:
+    
+`{  
+"phone_number":"enter phone number here"  
+}`
+
+14.  Click on the "Send" button to send the request to the server.
+    
+15.  To test the "Audit Logs" method, expand the "Audit Logs" request and click on the "Send" button to send the request to the server.
+    
+That's it! You have successfully checked all the methods on Postman using this JSON code. Remember to use the generated token in the "Authorization" tab for all the subsequent requests, and to enter the request body details in JSON format as specified for each method.
+
