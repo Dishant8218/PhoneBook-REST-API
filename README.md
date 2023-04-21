@@ -17,23 +17,33 @@ This is a REST API application that allows you to maintain a phonebook of names 
 
 Clone the repository
 
-`git clone https://github.com/Dishant8218/PhoneBook-REST-API` 
+```
+git clone https://github.com/Dishant8218/PhoneBook-REST-API
+```
 
 Change directory
 
-`cd PhoneBook-REST-API` 
+```
+cd PhoneBook-REST-API
+``` 
 
 Build the docker-file
 
-`docker build -t my-rest-api . ` 
+```
+docker build -t my-rest-api . 
+```
 
 Run the docker-file
 
-`docker run -p 2000:5000 my-rest-api` 
+```
+docker run -p 2000:5000 my-rest-api
+``` 
 
 Test if the setup has been completed by going to the browser and typing "localhost:2000"
 
-`localhost:2000`
+```
+localhost:2000
+```
 
 #  Instructions to run all the methods on Postman
 
