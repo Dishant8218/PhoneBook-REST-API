@@ -3,7 +3,7 @@ import re
 from flask import Flask, request, jsonify, redirect, url_for
 from database import *
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token
-# ,get_raw_jwt,revoked_tokens
+
 
 app = Flask(__name__)
 app.config['JWT_SECRET_KEY'] = 'super-secret'  # Set your own secret key
@@ -18,19 +18,11 @@ def login():
 
     # Verify the user credentials
     if not username or not password or username != 'myuser' or password != 'mypassword':
-        return jsonify({"msg": "Bad username or password"}), 401
+        return jsonify({"msg": "Incorrect username or password"}), 401
 
     # Generate an access token and return it to the user
     access_token = create_access_token(identity=username)
     return jsonify(access_token=access_token)
-
-# @app.route('/logout', methods=['DELETE'])
-# @jwt_required
-# def logout():
-#     # Revoke the user's access token
-#     jti = get_raw_jwt()['jti']
-#     revoked_tokens.add(jti)
-#     return jsonify({"msg": "Successfully logged out"}), 200
 
 
 # Define the root URL
@@ -40,7 +32,7 @@ def index():
 
 # Define the /PhoneBook/list endpoint
 @app.route('/PhoneBook/list', methods=['GET'])
-@jwt_required
+@jwt_required()
 def list_contacts():
   contacts = get_contacts()
   return jsonify(contacts)
@@ -48,6 +40,7 @@ def list_contacts():
 
 # Define the /PhoneBook/add endpoint
 @app.route('/PhoneBook/add', methods=['POST'])
+@jwt_required()
 def add_contact():
   data = request.form
   name = request.json['name']
@@ -66,6 +59,7 @@ def add_contact():
 
 # Define the /PhoneBook/deleteByName endpoint
 @app.route('/PhoneBook/deleteByName', methods=['PUT'])
+@jwt_required()
 def delete_contact_by_name():
     name = request.json['name']
     success = delete_contact_by_name_from_database(name)
@@ -75,6 +69,7 @@ def delete_contact_by_name():
         return jsonify({'error': 'Contact not found'}), 404
 
 @app.route('/PhoneBook/deleteByNumber', methods=['PUT'])
+@jwt_required()
 def delete_contact_by_number():
     phone_number = request.json['phone_number']
     success = delete_contact_by_number_from_database(phone_number)
@@ -84,6 +79,7 @@ def delete_contact_by_number():
         return jsonify({'error': 'Number not found'}), 404
 
 @app.route('/PhoneBook/logs', methods=['GET'])
+@jwt_required()
 def view_logs():
   page = int(request.args.get('page', 1))
   limit = 10
