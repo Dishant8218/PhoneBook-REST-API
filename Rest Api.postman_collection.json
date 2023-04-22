@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "a6fe9794-3bd1-496d-b359-6a5d6e59147c",
+		"name": "Rest Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26955505"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4MTk1NTkwNywianRpIjoiYmEwYTFjZjUtYzQ5Zi00MmM2LTkzNzItNmQ2ZjZkMzdhM2QyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im15dXNlciIsIm5iZiI6MTY4MTk1NTkwNywiZXhwIjoxNjgxOTU2ODA3fQ.vEIrIKyoNyU9kIbAwnRSX5ew_TMzbV4t5sPCO-ivFHA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypassword\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:2000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4MTk2MTU5NCwianRpIjoiMGQ5NjBhYjgtMWFiMS00N2M3LWEzYjItMzRhYTA5OWNhYTdmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im15dXNlciIsIm5iZiI6MTY4MTk2MTU5NCwiZXhwIjoxNjgxOTYyNDk0fQ.uT1pg6dYPO6Fa66lFlPY_9JNSKBhQ1UTaYFzU0jOutg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2000/PhoneBook/list",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"PhoneBook",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Contact",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4MTk2MTU5NCwianRpIjoiMGQ5NjBhYjgtMWFiMS00N2M3LWEzYjItMzRhYTA5OWNhYTdmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im15dXNlciIsIm5iZiI6MTY4MTk2MTU5NCwiZXhwIjoxNjgxOTYyNDk0fQ.uT1pg6dYPO6Fa66lFlPY_9JNSKBhQ1UTaYFzU0jOutg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Smith\",\n    \"phone_number\":\"7628238776\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:2000/PhoneBook/add",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"PhoneBook",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete by name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4MTk2MTU5NCwianRpIjoiMGQ5NjBhYjgtMWFiMS00N2M3LWEzYjItMzRhYTA5OWNhYTdmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im15dXNlciIsIm5iZiI6MTY4MTk2MTU5NCwiZXhwIjoxNjgxOTYyNDk0fQ.uT1pg6dYPO6Fa66lFlPY_9JNSKBhQ1UTaYFzU0jOutg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Smith\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:2000/PhoneBook/deleteByName",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"PhoneBook",
+						"deleteByName"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete by Phone Number",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4MTk2MTU5NCwianRpIjoiMGQ5NjBhYjgtMWFiMS00N2M3LWEzYjItMzRhYTA5OWNhYTdmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im15dXNlciIsIm5iZiI6MTY4MTk2MTU5NCwiZXhwIjoxNjgxOTYyNDk0fQ.uT1pg6dYPO6Fa66lFlPY_9JNSKBhQ1UTaYFzU0jOutg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"phone_number\":\"7628238776\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:2000/PhoneBook/deleteByNumber",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"PhoneBook",
+						"deleteByNumber"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Audit Logs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4MTk2MTU5NCwianRpIjoiMGQ5NjBhYjgtMWFiMS00N2M3LWEzYjItMzRhYTA5OWNhYTdmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im15dXNlciIsIm5iZiI6MTY4MTk2MTU5NCwiZXhwIjoxNjgxOTYyNDk0fQ.uT1pg6dYPO6Fa66lFlPY_9JNSKBhQ1UTaYFzU0jOutg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2000/PhoneBook/logs",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"PhoneBook",
+						"logs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
